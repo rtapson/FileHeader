@@ -5,12 +5,14 @@ interface
 uses
   ToolsAPI,
   Vcl.Forms,
-  tapFileHeaderOptionsFrame;
+  tapFileHeaderOptionsFrame,
+  tapFileHeaderRepo;
 
 type
   TIDEHelpHelperIDEOptionsInterface = Class(TInterfacedObject, INTAAddInOptions)
   strict private
     FFrame : TfrmFileHeaderOptions;
+    FFileHeaders: TFileHeaderRepository;
   strict protected
 
   public
@@ -40,8 +42,10 @@ procedure TIDEHelpHelperIDEOptionsInterface.FrameCreated(AFrame: TCustomFrame);
 begin
   if AFrame is TfrmFileHeaderOptions  then
   begin
+    FFileHeaders := TFileHeaderRepository.Create;
+
     FFrame := AFrame as TfrmFileHeaderOptions;
-    FFrame.InitFrame;
+    FFrame.InitFrame(FFileHeaders);
   end;
 end;
 

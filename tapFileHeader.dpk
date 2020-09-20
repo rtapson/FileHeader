@@ -33,9 +33,11 @@ requires
   designide;
 
 contains
-  tapFileHeaderU in 'tapFileHeaderU.pas',
   tapKeyboardNotifier in 'tapKeyboardNotifier.pas',
   tapFileHeaderOptionsFrame in 'tapFileHeaderOptionsFrame.pas' {frmFileHeaderOptions: TFrame},
-  tapFileHeaderOptionsU in 'tapFileHeaderOptionsU.pas';
+  tapFileHeaderOptionsU in 'tapFileHeaderOptionsU.pas',
+  tapFileHeaderRepo in 'tapFileHeaderRepo.pas',
+  tapKeywords in 'tapKeywords.pas',
+  tapToolsApiUtils in 'tapToolsApiUtils.pas';
 
 end.
